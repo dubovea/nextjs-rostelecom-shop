@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { IMenuLinkItemProps } from '@/types/modules'
 
-export const MenuLinkItem = ({
+const MenuLinkItem = ({
   item,
   handleRedirectToCatalog,
 }: IMenuLinkItemProps) => {
@@ -20,3 +20,5 @@ export const MenuLinkItem = ({
     </li>
   )
 }
+
+export default MenuLinkItem

@@ -1,8 +1,8 @@
 'use client'
 import { useLang } from '@/hooks/useLang'
+import Menu from './Menu'
 import Logo from '@/components/elements/Logo/Logo'
 import Link from 'next/link'
-import { Menu } from './Menu'
 import { openMenu } from '@/context/modals'
 import { addOverflowHiddenToBody } from '@/lib/utils/common'
 

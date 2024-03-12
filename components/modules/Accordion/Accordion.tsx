@@ -2,7 +2,7 @@ import { IAccordionProps } from '@/types/modules'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 
-export const Accordion = ({
+const Accordion = ({
   children,
   title,
   titleClass,
@@ -44,3 +44,5 @@ export const Accordion = ({
     </>
   )
 }
+
+export default Accordion
