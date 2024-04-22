@@ -1,10 +1,12 @@
 'use client'
-import { useLang } from '@/hooks/useLang'
+import Link from 'next/link'
 import Menu from './Menu'
 import Logo from '@/components/elements/Logo/Logo'
-import Link from 'next/link'
-import { openMenu } from '@/context/modals'
+
+import { useLang } from '@/hooks/useLang'
+import { openMenu, openSearchModal } from '@/context/modals'
 import { addOverflowHiddenToBody } from '@/lib/utils/common'
+import CartPopup from './CartPopup/CartPopup'
 
 const Header = () => {
   const { lang, translations } = useLang()
@@ -12,6 +14,10 @@ const Header = () => {
   const handleOpenMenu = () => {
     addOverflowHiddenToBody()
     openMenu()
+  }
+  const handleOpenSearchModal = () => {
+    addOverflowHiddenToBody()
+    openSearchModal()
   }
 
   return (
@@ -26,7 +32,10 @@ const Header = () => {
         </div>
         <ul className='header__links list-reset'>
           <li className='header__links__item'>
-            <button className='header__links__item__btn header__links__item__btn--search' />
+            <button
+              className='btn-reset header__links__item__btn header__links__item__btn--search'
+              onClick={handleOpenSearchModal}
+            />
           </li>
           <li className='header__links__item'>
             <Link
@@ -41,10 +50,7 @@ const Header = () => {
             />
           </li>
           <li className='header__links__item'>
-            <Link
-              href='/cart'
-              className='header__links__item__btn header__links__item__btn--cart'
-            />
+            <CartPopup />
           </li>
           <li className='header__links__item header__links__item--profile'>
             <Link
