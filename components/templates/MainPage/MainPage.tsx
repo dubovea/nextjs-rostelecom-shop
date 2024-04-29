@@ -3,7 +3,7 @@ import { useGate } from 'effector-react'
 import { MainPageGate } from '@/context/goods'
 import Categories from '@/components/modules/MainPage/Categories/Categories'
 import Hero from '@/components/modules/MainPage/Hero/Hero'
-import Bestsellergoods from '@/components/modules/MainPage/Bestsellergoods'
+import Bestsellergoods from '@/components/modules/MainPage/BestsellerGoods'
 
 const MainPage = () => {
   useGate(MainPageGate)

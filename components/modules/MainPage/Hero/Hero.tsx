@@ -9,9 +9,10 @@ import img1 from '@/public/img/black-t.png'
 import img2 from '@/public/img/orange-t.png'
 import img3 from '@/public/img/violet-t.png'
 import HeroSlide from './HeroSlide'
+import ProductSubtitle from '@/components/elements/ProductSubtitle/ProductSubtitle'
 import styles from '@/styles/main-page/index.module.scss'
 import stylesForAd from '@/styles/ad/index.module.scss'
-import { AllowedLangs } from '@/constants/lang'
+import productSubtitleStyles from '@/styles/product-subtitle/index.module.scss'
 
 const Hero = () => {
   const { lang, translations } = useLang()
@@ -67,10 +68,16 @@ const Hero = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        <ProductSubtitle
+          subtitleClassName={productSubtitleStyles.product_subtitle__subtitle}
+          subtitleRectClassName={
+            productSubtitleStyles.product_subtitle__subtitle__rect
+          }
+        />
         <h2 className={styles.hero__title}>
           <span
             className={`${styles.hero__title__subtitle} ${
-              lang === AllowedLangs.RU ? '' : styles.hero__title__subtitle_lang
+              lang === 'ru' ? '' : styles.hero__title__subtitle_lang
             }`}
           >
             [ {translations[lang].main_page.hero_subtitle} ]
