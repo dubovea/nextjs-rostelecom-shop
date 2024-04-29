@@ -1,4 +1,4 @@
-import { Db, MongoClient, ObjectId } from 'mongodb'
+import { Db, MongoClient } from 'mongodb'
 import { shuffle } from './common'
 export const getDbAndReqBody = async (
   clientConnector: Promise<MongoClient>,
